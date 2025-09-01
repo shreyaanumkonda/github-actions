@@ -1,0 +1,26 @@
+name:  Good Morning
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+jobs:
+        say-goodnight:
+          runs-on: ubuntu-latest
+          steps:
+            - name: Print a good morning message
+              run: echo "Good morning!"
+            - uses: actions/check-out@v2
+            - run: echo "Good night! This is the end of the Job-1"
+        say-goodmorning:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Print a good morning message
+                  run: echo "Good morning!"
+                - uses: actions/checkout@v2
+                - run: echo "Good night! This is the end of the Job-2"
+                  shell: bash
+                
