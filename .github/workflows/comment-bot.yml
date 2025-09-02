@@ -9,11 +9,12 @@ jobs:
     reply:
         runs-on: ubuntu-latest
         steps:
-            - name: Reply with a comment
+            - name: Reply dynamically
               uses: peter-evans/create-or-update-comment@v3
               with:
                 issue-number: ${{ github.event.issue.number }}
-                edit-mode: replace
                 body: |
                   you said: ${{ github.event.comment.body }}
-                  <!-- bot-comment-id: response -->
+                identifier: chatops-bot-reply
+          
+          
