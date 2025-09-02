@@ -1,7 +1,7 @@
 name: Comment Bot
 on:
     issue_comment:
-        types: [created] # ignore edits for now
+        types: [created, edited] # listen to both new comments and edits
 permissions:
     issues: write
     pull-requests: write
