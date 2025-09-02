@@ -7,4 +7,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Print comment
-              run: echo "New comment body ${{ github.event.issue.number }}"
+              run: echo "New comment body ${{ github.event.issue.body }}"
