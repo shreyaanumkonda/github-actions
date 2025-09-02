@@ -13,5 +13,6 @@ jobs:
               uses: peter-evans/create-or-update-comment@v3
               with:
                 issue-number: ${{ github.event.issue.number }}
+                comment-id: bot-response
                 body: |
                   you said: ${{ github.event.comment.body }}
