@@ -23,6 +23,12 @@ Welcome to my GitHub Actions learning journey! This repository contains practica
 - **Triggers**: Push, Pull Request, Manual dispatch
 - **What I learned**: Multiple jobs, different trigger types, manual workflow execution
 
+### 3. [Issue Comment Workflow](./workflows/issue-comment-workflow.md)
+- **File**: `.github/workflows/issue-comment.yml`
+- **Purpose**: Event-driven workflow triggered by issue comments
+- **Triggers**: Issue comment creation
+- **What I learned**: Event-driven automation, GitHub event context, issue comment handling
+
 ## Getting Started
 
 1. **Clone this repository**
@@ -37,6 +43,7 @@ Welcome to my GitHub Actions learning journey! This repository contains practica
 - Job and step configuration
 - Manual workflow dispatch
 - Multiple job workflows
+- Event-driven automation (issue comments)
 - Advanced actions and marketplace integration (coming soon)
 - Environment variables and secrets (coming soon)
 - Deployment workflows (coming soon)
