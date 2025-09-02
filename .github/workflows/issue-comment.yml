@@ -1,0 +1,10 @@
+name:  Test Issue Comment
+on:
+    issue_comment:
+        types:  [created]
+jobs:
+    Issued-a-comment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print comment
+              run: echo "New comment on issue #${{ github.event.comment.body }}"

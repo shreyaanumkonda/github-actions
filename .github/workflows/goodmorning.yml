@@ -12,14 +12,14 @@ jobs:
           runs-on: ubuntu-latest
           steps:
             - name: Print a good morning message
-              run: echo "Good morning!"
+              run: echo "Good morning! from job-1"
             - uses: actions/checkout@v2
             - run: echo "Good night! This is the end of the Job-1"
         say-goodmorning:
             runs-on: ubuntu-latest
             steps:
                 - name: Print a good morning message
-                  run: echo "Good morning!"
+                  run: echo "Good morning! from job-2"
                 - uses: actions/checkout@v2
                 - run: echo "Good night! This is the end of the Job-2"
                   shell: bash
