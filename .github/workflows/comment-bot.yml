@@ -1,0 +1,14 @@
+name: Comment Bot
+on:
+    issue_comment:
+        types: [created, edited] #triggers whenever someone posts a comment on an issue or pull request
+jobs:
+    reply:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Reply with a comment
+              uses: peter-evans/create-issue-comment@v2
+              with:
+                issue-number: ${{ github.event.issue.number }}
+                body: |
+                  you said: ${{ github.event.comment.body }}
