@@ -1,76 +1,63 @@
-# GitHub Actions Learning Repository
+# GitHub Actions Workflows
 
-Welcome to my GitHub Actions learning journey! This repository contains practical examples and workflows I've created while learning GitHub Actions from scratch.
+This repository contains various GitHub Actions workflows for automation and testing.
 
-## Learning Objectives
+## Workflows
 
-- Understanding GitHub Actions workflow syntax
-- Learning different trigger types (push, pull request, manual)
-- Exploring job configurations and steps
-- Building practical automation workflows
+### 1. Comment Bot (`comment-bot.yml`)
 
-## Workflow Examples
+A smart comment bot that responds to issue comments and updates its reply when you edit your comment.
 
-### 1. [Hello World Workflow](./workflows/hello-workflow.md)
-- **File**: `.github/workflows/hello.yml`
-- **Purpose**: Basic introduction to GitHub Actions
-- **Triggers**: Push to main branch
-- **What I learned**: Basic workflow structure, simple triggers
+**Features:**
+- Responds to new comments on issues
+- Updates its previous reply when you edit your comment (no duplicate comments)
+- Ignores its own comments to prevent infinite loops
+- Uses a unique identifier to track and update the same comment
 
-### 2. [Good Morning Workflow](./workflows/goodmorning-workflow.md)
-- **File**: `.github/workflows/goodmorning.yml`
-- **Purpose**: Advanced workflow with multiple jobs and triggers
-- **Triggers**: Push, Pull Request, Manual dispatch
-- **What I learned**: Multiple jobs, different trigger types, manual workflow execution
+**How it works:**
+1. When you post a comment → Bot creates a reply
+2. When you edit your comment → Bot updates its previous reply
+3. The bot uses `identifier: chatops-bot-reply` to find and update the same comment
 
-### 3. [Issue Comment Workflow](./workflows/issue-comment-workflow.md)
-- **File**: `.github/workflows/issue-comment.yml`
-- **Purpose**: Event-driven workflow triggered by issue comments
-- **Triggers**: Issue comment creation
-- **What I learned**: Event-driven automation, GitHub event context, issue comment handling
+**Trigger:** `issue_comment` events (created, edited)
 
-## Getting Started
+### 2. Issue Comment Test (`issue-comment.yml`)
 
-1. **Clone this repository**
-2. **Navigate to the Actions tab** in GitHub
-3. **Explore the workflows** and their documentation
-4. **Try the manual dispatch** feature for hands-on learning
+A simple workflow that prints issue comment details to the console.
 
-## Learning Progress
+**Features:**
+- Logs issue number and comment body
+- Useful for testing issue comment events
 
-- Basic workflow creation
-- Understanding triggers and events
-- Job and step configuration
-- Manual workflow dispatch
-- Multiple job workflows
-- Event-driven automation (issue comments)
-- Advanced actions and marketplace integration (coming soon)
-- Environment variables and secrets (coming soon)
-- Deployment workflows (coming soon)
+**Trigger:** `issue_comment` events (created)
 
-## Technologies Used
+### 3. Good Morning Workflow (`goodmorning-workflow.md`)
 
-- **GitHub Actions**
-- **YAML**
-- **Ubuntu runners**
-- **GitHub CLI**
+Documentation for a good morning automation workflow.
 
-## Resources
+### 4. Hello Workflow (`hello-workflow.md`)
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [Workflow Syntax Reference](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+Documentation for a hello world workflow.
+
+## Setup
+
+1. Clone this repository
+2. The workflows are automatically available in the `.github/workflows/` directory
+3. They will trigger based on their respective event conditions
+
+## Testing
+
+To test the Comment Bot:
+1. Create an issue in this repository
+2. Post a comment on the issue
+3. Edit your comment to see the bot update its reply
+
+## Permissions
+
+The Comment Bot workflow requires the following permissions:
+- `issues: write` - To create and update comments
+- `pull-requests: write` - To handle PR comments
 
 ## Contributing
 
-This is a learning repository, but feel free to:
-- Suggest improvements to existing workflows
-- Share additional learning resources
-- Report any issues you find
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-*This repository documents my journey learning GitHub Actions. Each workflow includes detailed documentation explaining what I learned and how it works.*
+Feel free to submit issues and enhancement requests!
