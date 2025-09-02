@@ -1,12 +1,13 @@
 name: Comment Bot
 on:
     issue_comment:
-        types: [created, edited] #triggers whenever someone posts a comment on an issue or pull request
+        types: [created] # ignore edits for now
 permissions:
     issues: write
     pull-requests: write
 jobs:
     reply:
+        if: ${{ github.actor != 'github-actions[bot]' }} # ignore bot comments
         runs-on: ubuntu-latest
         steps:
             - name: Reply dynamically
