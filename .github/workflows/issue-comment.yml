@@ -3,8 +3,8 @@ on:
     issue_comment:
         types:  [created]
 jobs:
-    Issued-a-comment:
+    Issue-comment:
         runs-on: ubuntu-latest
         steps:
             - name: Print comment
-              run: echo "New comment on issue ${{ github.event.issue.number }}"
+              run: echo "New comment on issue ${{ github.event.issue.body }}"
