@@ -2,6 +2,8 @@ name: Comment via REST API
 on:
     pull_request:
         types: [opened]
+permissions:
+    pull-requests: write
 jobs:
     comment:
         runs-on: ubuntu-latest
