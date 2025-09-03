@@ -29,6 +29,7 @@ This repository contains various workflow examples demonstrating different GitHu
 | Good Morning | Basic | Scheduled automation workflow | [goodmorning-workflow.md](./workflows/goodmorning-workflow.md) |
 | Issue Comment | Basic | Event-driven comment response | [issue-comment-workflow.md](./workflows/issue-comment-workflow.md) |
 | Comment Bot | Intermediate | Comment management with updates | [comment-bot-workflow.md](./workflows/comment-bot-workflow.md) |
+| REST API | Intermediate | Direct GitHub API integration | [rest-api-workflow.md](./workflows/rest-api-workflow.md) |
 
 ### Workflow Categories
 
@@ -52,6 +53,7 @@ Each workflow can be tested based on its trigger conditions:
 - **Good Morning**: Wait for the scheduled time (9 AM UTC daily)
 - **Issue Comment**: Create an issue and post a comment
 - **Comment Bot**: Create an issue, post a comment, then edit it
+- **REST API**: Create a PR to trigger API comment creation
 
 See individual workflow documentation for detailed testing instructions.
 
