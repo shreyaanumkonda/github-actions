@@ -1,0 +1,2 @@
+This is a test file to trigger the REST API workflow.
+When this branch is merged via PR, the workflow should create a comment.
