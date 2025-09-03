@@ -1,0 +1,15 @@
+name: Comment via REST API
+on:
+    pull_request:
+        types: [opened]
+jobs:
+    comment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Create a comment on PR
+              run: |
+                curl -X POST \
+                -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                -H "Content-Type: application/json" \
+                -d '{"body": "Hello, this is a comment via REST API"}' \
+                "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments"
