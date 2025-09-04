@@ -14,6 +14,17 @@ jobs:
               with:
                 go-version: 1.21
             - name: Build the code 
-              run: go build ./...
+              run: |
+                echo "Building Go application..."
+                go build ./...
+                echo "Build completed successfully!"
+            - name: Run the code
+              run: |
+                echo "Running Go application..."
+                go run main.go
+                echo "Application completed successfully!"
             - name: Test the code
-              run: go test ./...
+              run: |
+                echo "Running Go tests..."
+                go test ./...
+                echo "Tests completed!"
