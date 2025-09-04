@@ -30,6 +30,7 @@ This repository contains various workflow examples demonstrating different GitHu
 | Issue Comment | Basic | Event-driven comment response | [issue-comment-workflow.md](./workflows/issue-comment-workflow.md) |
 | Comment Bot | Intermediate | Comment management with updates | [comment-bot-workflow.md](./workflows/comment-bot-workflow.md) |
 | REST API | Intermediate | Direct GitHub API integration | [rest-api-workflow.md](./workflows/rest-api-workflow.md) |
+| Go API CI/CD | Intermediate | Go application with automated testing | [go-api-workflow.md](./workflows/go-api-workflow.md) |
 
 ### Workflow Categories
 
@@ -54,6 +55,7 @@ Each workflow can be tested based on its trigger conditions:
 - **Issue Comment**: Create an issue and post a comment
 - **Comment Bot**: Create an issue, post a comment, then edit it
 - **REST API**: Create a PR to trigger API comment creation
+- **Go API CI/CD**: Push changes or create PR to trigger build/test
 
 See individual workflow documentation for detailed testing instructions.
 
